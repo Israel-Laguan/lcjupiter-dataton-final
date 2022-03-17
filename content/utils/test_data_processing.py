@@ -1,9 +1,5 @@
-from data_processing import loadTrainData,loadTestData
+from .data_processing import load_csv_data
 
 def test_loadTrainData():
-  trainData = loadTrainData()
+  trainData = load_csv_data()
   assert all(trainData.head())
-
-def test_loadTestData():
-  testData = loadTestData()
-  assert all(testData.head())

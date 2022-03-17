@@ -1,24 +1,30 @@
 import pandas as pd
+import sys
 import string
-from skimpy import clean_columns
-
-printable = set(string.printable)
 
 def remove_spec_chars(in_str):
-    return ''.join([c for c in in_str if c in printable])
+  printable = set(string.printable)
+  cleanName = in_str.replace(r'[^A-Za-z0-9]+', '')
+  return ''.join([c for c in cleanName if c in printable])
 
-def loadTrainData(path="content/sample_data/train.csv"):
+def load_csv_data(path="./content/sample_data/train.csv"):
   try:
-    dataframeTrainData = pd.read_csv(path, dtype=str, low_memory=False)
-  except pd.errors.EmptyDataError:
-    print('CSV file empty')
-  dataframeTrainData.columns.apply(remove_spec_chars)
-  return clean_columns(dataframeTrainData)
+    dataframeData = pd.read_csv(path, dtype=str, low_memory=False, usecols=lambda x: remove_spec_chars(x))
+    return dataframeData
+  except KeyError as e:
+    print("Expected column headers not found")
+    sys.exit(1)
+  except TypeError as e:
+      print("Type Error")
+      sys.exit(1)
+  except FileNotFoundError as e:
+    print("CSV file not found " + str(e))
+    sys.exit(1)
+  except Exception as e:
+    print(e)
+    sys.exit(1)
 
-def loadTestData(path="content/sample_data/test.csv"):
-  try:
-    dataframeTestData = pd.read_csv(path, sep=';', encoding="iso-8859-1", on_bad_lines = 'warn')
-  except pd.errors.EmptyDataError:
-    print('CSV file empty')
-  dataframeTestData.columns.str.replace(r'[^A-Za-z0-9]+', '')
-  return clean_columns(dataframeTestData)
+def set_index(dataframe, column = 'id'):
+  dataframe[column] = pd.to_numeric(dataframe[column], errors='coerce')
+  dataframe = dataframe.set_index(column)
+  return dataframe
