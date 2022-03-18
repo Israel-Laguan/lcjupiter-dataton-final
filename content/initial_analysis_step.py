@@ -118,6 +118,10 @@ columnsToErase = [
   'valor_area_libre',
   'valor_uvr',
   'valor_avaluo_en_uvr',
+  'descripcion_tipo_inmueble',
+  'descripcion_uso_inmueble',
+  'tipo_deposito',
+  'numero_total_depositos',
 ]
 
 categorical_columns = [
@@ -234,6 +238,7 @@ numeric_columns = [
   # Seccion Garage
   'numero_total_de_garajes', # [Int] 0 - 5 (Contiene datos espureos)
   'total_cupos_parquedaro', # [Int] 0 - 8 (Contiene datos espureos)
+  'valor_total_avaluo',
 ]
 
 
@@ -245,7 +250,8 @@ def get_clean_data (df = "./content/sample_data/train.csv"):
 
     cleanData[numeric_columns] = cleanData[numeric_columns].fillna(0)
     for column in numeric_columns:
-      cleanData[column] = cleanData[column].str.replace(",", ".")
+      if cleanData[column].astype(str).str:
+        cleanData[column] = cleanData[column].astype(str).str.replace(",", ".")
 
     cleanData[numeric_columns] = cleanData.loc[:,numeric_columns].transform(lambda x: x.map(lambda x: { "Si": 1., "No": 0. }.get(x,x)))
 
