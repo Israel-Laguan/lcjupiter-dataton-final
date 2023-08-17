@@ -9,7 +9,7 @@ backports.functools-lru-cache @ file:///home/conda/feedstock_root/build_artifact
 bleach @ file:///home/conda/feedstock_root/build_artifacts/bleach_1629908509068/work
 blinker==1.4
 brotlipy==0.7.0
-certifi==2021.5.30
+certifi==2023.7.22
 certipy==0.1.3
 cffi @ file:///home/conda/feedstock_root/build_artifacts/cffi_1625835307225/work
 chardet @ file:///home/conda/feedstock_root/build_artifacts/chardet_1610093492116/work
