@@ -36,7 +36,7 @@ ipython @ file:///home/conda/feedstock_root/build_artifacts/ipython_163017252441
 ipython-genutils==0.2.0
 jedi @ file:///home/conda/feedstock_root/build_artifacts/jedi_1610146787869/work
 Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1621419064915/work
-joblib==1.1.0
+joblib==1.2.0
 json5 @ file:///home/conda/feedstock_root/build_artifacts/json5_1600692310011/work
 jsonschema @ file:///home/conda/feedstock_root/build_artifacts/jsonschema_1614815863336/work
 jupyter-client @ file:///home/conda/feedstock_root/build_artifacts/jupyter_client_1631893672246/work
