@@ -96,7 +96,7 @@ ruamel-yaml-conda @ file:///home/conda/feedstock_root/build_artifacts/ruamel_yam
 ruamel.yaml @ file:///home/conda/feedstock_root/build_artifacts/ruamel.yaml_1630314087433/work
 ruamel.yaml.clib @ file:///home/conda/feedstock_root/build_artifacts/ruamel.yaml.clib_1610146844134/work
 scikit-learn==1.0.2
-scipy==1.8.0
+scipy==1.10.0
 Send2Trash @ file:///home/conda/feedstock_root/build_artifacts/send2trash_1628511208346/work
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
 skimpy==0.0.5
