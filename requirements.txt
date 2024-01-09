@@ -25,7 +25,7 @@ debugpy @ file:///home/conda/feedstock_root/build_artifacts/debugpy_162707485323
 decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1631346842025/work
 defusedxml @ file:///home/conda/feedstock_root/build_artifacts/defusedxml_1615232257335/work
 entrypoints @ file:///home/conda/feedstock_root/build_artifacts/entrypoints_1602701735325/work/dist/entrypoints-0.3-py2.py3-none-any.whl
-fonttools==4.29.1
+fonttools==4.43.0
 greenlet @ file:///home/conda/feedstock_root/build_artifacts/greenlet_1628272056983/work
 idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1609836280497/work
 importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1630267473458/work
